@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
     // Query Supabase for schedules that are due (schedule_time <= now) and haven't been sent yet
     const { data: schedules, error } = await supabase
-      .from('schedules')
+      .from('tasks')
       .select('*')
       .lte('schedule_time', now)
       .eq('status', 'pending');
@@ -60,7 +60,7 @@ export default async function handler(req, res) {
         
         // Update status in Supabase so we don't send it again
         await supabase
-          .from('schedules')
+          .from('tasks')
           .update({ status: 'sent' })
           .eq('id', schedule.id);
           
