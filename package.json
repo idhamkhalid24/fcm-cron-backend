@@ -1,0 +1,13 @@
+{
+  "name": "fcm-cron-backend",
+  "version": "1.0.0",
+  "description": "Backend for sending FCM scheduled via Supabase and Vercel Cron",
+  "main": "api/cron.js",
+  "dependencies": {
+    "firebase-admin": "^11.11.0",
+    "@supabase/supabase-js": "^2.38.0"
+  },
+  "scripts": {
+    "start": "node api/cron.js"
+  }
+}
