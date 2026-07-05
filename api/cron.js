@@ -47,8 +47,8 @@ export default async function handler(req, res) {
 
       const message = {
         notification: {
-          title: schedule.title || 'Jadwal Tiba!',
-          body: schedule.description || 'Ada jadwal yang harus kamu kerjakan sekarang.'
+          title: 'Pengingat Jadwal! ⏰',
+          body: `Waktunya untuk: ${schedule.title}`
         },
         token: schedule.fcm_token
       };
