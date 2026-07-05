@@ -50,6 +50,12 @@ export default async function handler(req, res) {
           title: 'Pengingat Jadwal! ⏰',
           body: `Waktunya untuk: ${schedule.title}`
         },
+        android: {
+          notification: {
+            channelId: 'fcm_custom_channel_v1',
+            sound: 'notif_suara'
+          }
+        },
         token: schedule.fcm_token
       };
 
